@@ -1,33 +1,36 @@
 class RtInterest < Formula
   desc "Live view of NATS subject values for curated tag lists"
   homepage "https://github.com/pmuston/homebrew-rt-interest"
-  version "0.1.0"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/pmuston/homebrew-rt-interest/releases/download/v0.1.0/rt-interest-v0.1.0-darwin-arm64.tar.gz"
-      sha256 "4a48b4db6f01d9baf3c085d08f942e3891e42a794ebfa50928f13ff04abc1591"
+      sha256 "eb0e1fa6129bdb9286e230e0750e9b51ca4e8bf38c01cb80dc06c8905f01b029"
     end
     on_intel do
       url "https://github.com/pmuston/homebrew-rt-interest/releases/download/v0.1.0/rt-interest-v0.1.0-darwin-amd64.tar.gz"
-      sha256 "6cc9a1d16a8576003f3041232aaf7d3725fb1d5f4e9d280b39e9192d60c99202"
+      sha256 "ba9dd59b91db2029593ad360be7697ed6cf5a95cd56f657cccb5e3e5bb006a16"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/pmuston/homebrew-rt-interest/releases/download/v0.1.0/rt-interest-v0.1.0-linux-arm64.tar.gz"
-      sha256 "51df68c5287c250f9b6e40061ba94d17421580ec0f9f08a9cf1f690c25ea7ae4"
+      sha256 "3a7482da8a35c09ef0b297e9be8c1a566ff0964e22ede98e09acafd7c274d725"
     end
     on_intel do
       url "https://github.com/pmuston/homebrew-rt-interest/releases/download/v0.1.0/rt-interest-v0.1.0-linux-amd64.tar.gz"
-      sha256 "f7ee541cfd3d52f3af5de73444c2166d4e3a2752f5e4e00b5a83f0700af9a540"
+      sha256 "975813fde47adfd6594715dc412d271a06b69a3c0b9f539eefd49cf04e26ff4c"
     end
   end
 
   def install
     bin.install "rt-interest"
+    # Homebrew installs its known metafiles (README, LICENSE) by itself, but
+    # discards anything else in the tarball. The third-party notices have to be
+    # named explicitly or Apache 2.0 attribution never reaches the machine.
+    prefix.install "THIRD_PARTY_LICENSES" if File.exist?("THIRD_PARTY_LICENSES")
   end
 
   test do
