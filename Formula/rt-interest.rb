@@ -5,28 +5,29 @@ class RtInterest < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/pmuston/homebrew-rt-interest/releases/download/v0.1.0/rt-interest-v0.1.0-darwin-arm64.tar.gz"
-      sha256 "aec76e23b19e9b9f302e27e8fb0984b6fa89f68eb8f1342ccf4219acac473f85"
+      url "https://github.com/pmuston/homebrew-rt-interest/releases/download/v0.2.0/rt-interest-v0.2.0-darwin-arm64.tar.gz"
+      sha256 "6708bf97adccb28bacdd90c147215db338cd92f33b473dbdfd983b782601376f"
     end
     on_intel do
-      url "https://github.com/pmuston/homebrew-rt-interest/releases/download/v0.1.0/rt-interest-v0.1.0-darwin-amd64.tar.gz"
-      sha256 "3d8667cff6581a831a185030f98247507e26757c8e2f45d3ce6b428afc4d0207"
+      url "https://github.com/pmuston/homebrew-rt-interest/releases/download/v0.2.0/rt-interest-v0.2.0-darwin-amd64.tar.gz"
+      sha256 "447841c6df7a4928942c7a1344b35a68426af43d70cd1421ff4d4011accbaf74"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/pmuston/homebrew-rt-interest/releases/download/v0.1.0/rt-interest-v0.1.0-linux-arm64.tar.gz"
-      sha256 "19e9ebcee8be8bd2bcad2f9ef15b45ab9dbdaeac8e810f031d3aff6d04734e7d"
+      url "https://github.com/pmuston/homebrew-rt-interest/releases/download/v0.2.0/rt-interest-v0.2.0-linux-arm64.tar.gz"
+      sha256 "c8c89100fabbf0bff8e71186c9a8fa87f2edf4763cf29bb3cdbc7ce5c2d12e45"
     end
     on_intel do
-      url "https://github.com/pmuston/homebrew-rt-interest/releases/download/v0.1.0/rt-interest-v0.1.0-linux-amd64.tar.gz"
-      sha256 "642ae6bfcc8d3c38f4c36c5f8a3692f5a4603227758aecae3faeb341f5a3e116"
+      url "https://github.com/pmuston/homebrew-rt-interest/releases/download/v0.2.0/rt-interest-v0.2.0-linux-amd64.tar.gz"
+      sha256 "a743b9cee151e85daab4a7e242cda82a85f8866bc761c4cc1028c822325375c1"
     end
   end
 
   def install
     bin.install "rt-interest"
+    man1.install "rt-interest.1"
     # Homebrew installs its known metafiles (README, LICENSE) by itself, but
     # discards anything else in the tarball. The third-party notices have to be
     # named explicitly or Apache 2.0 attribution never reaches the machine.
